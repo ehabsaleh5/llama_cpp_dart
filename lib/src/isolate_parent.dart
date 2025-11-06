@@ -210,7 +210,7 @@ class LlamaParent {
 
     // Wait for confirmation with timeout
     return await _operationCompleter!.future.timeout(
-      Duration(seconds: description == "model loading" ? 300 : 300),
+      Duration(minutes: description == "model loading" ? 5 : 5),
       onTimeout: () {
         throw TimeoutException('Operation "$description" timed out');
       },
